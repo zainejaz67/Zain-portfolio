@@ -78,7 +78,7 @@ const Intro = () => {
         </div>
         <div className="intro-right animate-fade-in-up" style={{animationDelay: '0.5s'}}>
           <div className="intro-photo-border">
-            <img src="/src/assets/myphoto.png" alt="Zain Ijaz" className="intro-photo" />
+            <img src={myPhoto} alt="Zain Ijaz" className="intro-photo" />
           </div>
         </div>
       </div>
