@@ -1,0 +1,65 @@
+/* --- Custom Project Card Theme --- */
+.project-card-theme {
+  /* Inherit all from .custom-experience-card */
+}
+
+.custom-experience-card.project-card-theme:hover {
+  box-shadow: 0 16px 48px 0 rgba(0,212,255,0.22), 0 0 0 6px rgba(0,212,255,0.13);
+  transform: translateY(-6px) scale(1.018);
+}
+
+/* Remove old .project-card styles, only keep grid/layout if needed */
+
+.project-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background: var(--gradient-primary);
+  color: var(--text-primary);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.7rem 1.4rem;
+  box-shadow: 0 2px 8px rgba(0,212,255,0.10);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.github-btn:hover, .github-btn:focus {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: var(--shadow-glow);
+  color: var(--text-primary);
+  background: var(--gradient-primary);
+  outline: none;
+}
+
+/* Keep grid layout for .projects-grid if needed */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all var(--transition-slow);
+}
+
+.projects-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
