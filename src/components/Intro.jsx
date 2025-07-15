@@ -58,22 +58,20 @@ const Intro = () => {
     <section className="intro-section">
       <div className="intro-container">
         <div className="intro-left">
-          <div className="intro-card">
-            <div className="intro-greeting animate-fade-in-up">Hi, I’m</div>
-            <h1 className="intro-title animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-              <span className="intro-name gradient-text">Zain Ijaz</span>
-            </h1>
-            <h2 className="intro-special animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-              <span className="gradient-text">{typedText}</span>
-              <span className="typewriter-cursor" style={{opacity: showCursor ? 1 : 0}}>|</span>
-            </h2>
-            <p className="intro-summary animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-              Passionate about building modern web apps and smart AI solutions. Always learning, always building.
-            </p>
-            <div className="intro-buttons animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-              <a href="https://linkedin.com/in/zainijaz67" target="_blank" rel="noopener noreferrer" className="intro-btn intro-btn-primary">Contact on LinkedIn</a>
-              <a href="https://github.com/zainijaz67" target="_blank" rel="noopener noreferrer" className="intro-btn intro-btn-outline">GitHub</a>
-            </div>
+          <div className="intro-greeting animate-fade-in-up">Hi, I’m</div>
+          <h1 className="intro-title animate-fade-in-up" style={{animationDelay: '0.1s'}}>
+            <span className="intro-name gradient-text">Zain Ijaz</span>
+          </h1>
+          <h2 className="intro-special animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <span className="gradient-text">{typedText}</span>
+            <span className="typewriter-cursor" style={{opacity: showCursor ? 1 : 0}}>|</span>
+          </h2>
+          <p className="intro-summary animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+            Passionate about building modern web apps and smart AI solutions. Always learning, always building.
+          </p>
+          <div className="intro-buttons animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <a href="https://linkedin.com/in/zainijaz67" target="_blank" rel="noopener noreferrer" className="intro-btn intro-btn-primary">Contact on LinkedIn</a>
+            <a href="https://github.com/zainijaz67" target="_blank" rel="noopener noreferrer" className="intro-btn intro-btn-outline">GitHub</a>
           </div>
         </div>
         <div className="intro-right animate-fade-in-up" style={{animationDelay: '0.5s'}}>
