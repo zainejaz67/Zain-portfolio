@@ -5,15 +5,17 @@ import ExperienceItem from './ExperienceItem';
 const experiences = [
   {
     id: 1,
-    role: 'Intern',
+    role: 'Backend Intern',
     company: 'Sky Infinit',
-    period: '2024',
-    description: 'Worked as an intern at Sky Infinit, contributing to web development projects and learning industry best practices.',
-    technologies: ['React', 'JavaScript', 'HTML', 'CSS'],
+    period: 'June 2025 – July 2025',
+    location: 'Faisalabad, Punjab',
+    description: 'Developed scalable Flask-based APIs integrating Ollama and other LLMs to deliver AI-driven features for production systems.',
+    technologies: ['Flask', 'Python', 'Ollama', 'LLMs', 'API Development'],
     achievements: [
-      'Assisted in building and maintaining web applications',
-      'Collaborated with senior developers on real-world projects',
-      'Gained hands-on experience with modern web technologies'
+      'Developed scalable Flask-based APIs integrating Ollama and other LLMs to deliver AI-driven features for production systems',
+      'Fine-tuned large language models and optimized inference pipelines, reducing average response time from 45s to 15s',
+      'Implemented parallel request processing and improved load-handling mechanisms, significantly increasing API throughput',
+      'Designed efficient text chunking and tokenization pipelines, improving LLM accuracy and reducing processing overhead'
     ],
     logo: '/src/assets/sky_infinit_logo.jpg'
   }

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/ExperienceItem.css';
 
-const ExperienceItem = ({ role, company, period, description, technologies, achievements }) => (
+const ExperienceItem = ({ role, company, period, location, description, technologies, achievements }) => (
   <div className="custom-experience-card">
     <div className="custom-experience-content">
       <div className="custom-experience-header">
@@ -10,6 +10,7 @@ const ExperienceItem = ({ role, company, period, description, technologies, achi
           <span className="custom-company">{company}</span>
           <span className="custom-period">{period}</span>
         </div>
+        {location && <div className="custom-location">{location}</div>}
       </div>
       <div className="custom-divider" />
       <div className="custom-description">{description}</div>
