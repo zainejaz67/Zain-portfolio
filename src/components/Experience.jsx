@@ -13,9 +13,7 @@ const experiences = [
     technologies: ['Flask', 'Python', 'Ollama', 'LLMs', 'API Development'],
     achievements: [
       'Developed scalable Flask-based APIs integrating Ollama and other LLMs to deliver AI-driven features for production systems',
-      'Fine-tuned large language models and optimized inference pipelines, reducing average response time from 45s to 15s',
-      'Implemented parallel request processing and improved load-handling mechanisms, significantly increasing API throughput',
-      'Designed efficient text chunking and tokenization pipelines, improving LLM accuracy and reducing processing overhead'
+      'Fine-tuned large language models and optimized inference pipelines, reducing average response time from 45s to 15s'
     ],
     logo: '/src/assets/sky_infinit_logo.jpg'
   }

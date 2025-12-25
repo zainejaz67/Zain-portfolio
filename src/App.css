@@ -36,6 +36,59 @@ main {
   z-index: 0;
 }
 
+/* Global Tech Icons Background */
+.app-container::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dynamic Tech Icons */
+.app-container {
+  position: relative;
+}
+
+.global-tech-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.global-tech-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--gradient-primary);
+  border-radius: 8px;
+  opacity: 0.08;
+  color: white;
+  font-size: 1.2rem;
+  animation: floatGlobalTech 12s ease-in-out infinite;
+}
+
+.global-icon-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.global-icon-2 { top: 20%; right: 8%; animation-delay: 2s; }
+.global-icon-3 { top: 40%; left: 3%; animation-delay: 4s; }
+.global-icon-4 { top: 60%; right: 5%; animation-delay: 6s; }
+.global-icon-5 { top: 80%; left: 7%; animation-delay: 8s; }
+.global-icon-6 { top: 70%; right: 10%; animation-delay: 10s; }
+.global-icon-7 { top: 30%; left: 90%; animation-delay: 1s; }
+.global-icon-8 { top: 50%; right: 85%; animation-delay: 3s; }
+.global-icon-9 { top: 15%; left: 50%; animation-delay: 5s; }
+.global-icon-10 { top: 85%; right: 50%; animation-delay: 7s; }
+
 /* Section Spacing */
 main > * {
   position: relative;
@@ -56,6 +109,25 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes floatGlobalTech {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.08;
+  }
+  25% {
+    transform: translateY(-15px) rotate(90deg) scale(1.1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translateY(-25px) rotate(180deg) scale(0.9);
+    opacity: 0.15;
+  }
+  75% {
+    transform: translateY(-10px) rotate(270deg) scale(1.05);
+    opacity: 0.1;
   }
 }
 

@@ -75,11 +75,31 @@ const Intro = () => {
     <section id="intro" className="intro-section">
       {/* Background Elements */}
       <div className="intro-background">
-        <div className="floating-shapes">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-          <div className="shape shape-4"></div>
+        <div className="floating-tech-icons">
+          <div className="tech-icon tech-icon-1">
+            <i className="fas fa-code"></i>
+          </div>
+          <div className="tech-icon tech-icon-2">
+            <i className="fab fa-react"></i>
+          </div>
+          <div className="tech-icon tech-icon-3">
+            <i className="fas fa-database"></i>
+          </div>
+          <div className="tech-icon tech-icon-4">
+            <i className="fab fa-python"></i>
+          </div>
+          <div className="tech-icon tech-icon-5">
+            <i className="fas fa-laptop-code"></i>
+          </div>
+          <div className="tech-icon tech-icon-6">
+            <i className="fab fa-js-square"></i>
+          </div>
+          <div className="tech-icon tech-icon-7">
+            <i className="fas fa-server"></i>
+          </div>
+          <div className="tech-icon tech-icon-8">
+            <i className="fab fa-git-alt"></i>
+          </div>
         </div>
         <div className="grid-pattern"></div>
       </div>
