@@ -1,65 +1,150 @@
-/* --- Custom Project Card Theme --- */
-.project-card-theme {
-  /* Inherit all from .custom-experience-card */
+/* Modern Project Card Styles */
+.modern-project-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
 }
 
-.custom-experience-card.project-card-theme:hover {
-  box-shadow: 0 16px 48px 0 rgba(0,212,255,0.22), 0 0 0 6px rgba(0,212,255,0.13);
-  transform: translateY(-6px) scale(1.018);
+.modern-project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 32px rgba(74, 144, 226, 0.2);
 }
 
-/* Remove old .project-card styles, only keep grid/layout if needed */
+.project-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project-icon {
+  font-size: 2rem;
+  background: var(--gradient-primary);
+  padding: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  height: 60px;
+}
+
+.project-title-section {
+  flex: 1;
+}
+
+.project-title {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.project-category-badge {
+  background: rgba(0, 212, 255, 0.1);
+  color: var(--accent-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.project-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.project-features {
+  margin-bottom: 1.5rem;
+}
+
+.features-title {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.project-technologies {
+  margin-bottom: 1.5rem;
+}
+
+.tech-title {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: rgba(148, 163, 184, 0.1);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
 
 .project-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.2rem;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
-.github-btn {
+.github-link {
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;
-  background: var(--gradient-primary);
+  gap: 0.5rem;
+}
+
+.github-link:hover {
   color: var(--text-primary);
-  text-decoration: none;
-  border-radius: var(--radius-md);
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 0.7rem 1.4rem;
-  box-shadow: 0 2px 8px rgba(0,212,255,0.10);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.github-btn:hover, .github-btn:focus {
-  transform: translateY(-2px) scale(1.04);
-  box-shadow: var(--shadow-glow);
-  color: var(--text-primary);
-  background: var(--gradient-primary);
-  outline: none;
+  transform: translateX(4px);
 }
 
-/* Keep grid layout for .projects-grid if needed */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-xl);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all var(--transition-slow);
-}
-
-.projects-grid.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

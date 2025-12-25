@@ -1,6 +1,6 @@
 /* Modern Certification Item Styles */
 .certification-item {
-  background: var(--card-bg);
+  background: var(--gradient-card);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   overflow: hidden;
@@ -12,23 +12,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid var(--border-color);
 }
 .certification-item::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: var(--radius-lg);
-  padding: 2px;
-  background: linear-gradient(120deg, #00d4ff, #ff0080, #00d4ff);
-  background-size: 200% 200%;
-  animation: gradientMove 6s ease-in-out infinite;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  display: none;
 }
 .certification-content {
   position: relative;
@@ -197,8 +184,9 @@
 }
 
 .certification-item:hover {
-  box-shadow: 0 16px 48px 0 rgba(0,212,255,0.22), 0 0 0 6px rgba(0,212,255,0.13);
+  box-shadow: 0 16px 48px 0 rgba(74, 144, 226, 0.22), 0 0 0 6px rgba(74, 144, 226, 0.13);
   transform: translateY(-6px) scale(1.018);
+  border-color: var(--accent-primary);
 }
 
 @media (max-width: 900px) {

@@ -20,7 +20,7 @@
   align-items: center;
   padding: 0;
   margin: 0 auto var(--spacing-lg) auto;
-  max-width: 600px;
+  max-width: 900px;
 }
 
 .experience-card {
@@ -441,31 +441,18 @@
 /* --- Custom Experience Card Styles --- */
 .custom-experience-card {
   margin: 0 auto 2.5rem auto;
-  max-width: 600px;
-  background: var(--glass-bg);
+  max-width: 750px;
+  background: var(--gradient-card);
   border-radius: var(--radius-lg);
-  box-shadow: 0 8px 32px rgba(0,212,255,0.13);
+  box-shadow: 0 8px 32px rgba(74, 144, 226, 0.13);
   transition: box-shadow 0.2s, transform 0.2s;
   position: relative;
   overflow: hidden;
   padding: 0;
+  border: 1px solid var(--border-color);
 }
 .custom-experience-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: var(--radius-lg);
-  padding: 2px;
-  background: linear-gradient(120deg, #00d4ff, #ff0080, #00d4ff);
-  background-size: 200% 200%;
-  animation: gradientMove 6s ease-in-out infinite;
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  display: none;
 }
 .custom-experience-content {
   position: relative;
@@ -597,6 +584,7 @@
 } 
 
 .custom-experience-card:hover {
-  box-shadow: 0 16px 48px 0 rgba(0,212,255,0.22), 0 0 0 6px rgba(0,212,255,0.13);
+  box-shadow: 0 16px 48px 0 rgba(74, 144, 226, 0.22), 0 0 0 6px rgba(74, 144, 226, 0.13);
   transform: translateY(-6px) scale(1.018);
+  border-color: var(--accent-primary);
 } 

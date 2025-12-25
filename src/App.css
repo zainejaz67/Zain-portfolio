@@ -28,9 +28,10 @@ main {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at var(--grad1-x, 20%) var(--grad1-y, 80%), rgba(0, 212, 255, var(--grad1-alpha, 0.1)) 0%, transparent 50%),
-    radial-gradient(circle at var(--grad2-x, 80%) var(--grad2-y, 20%), rgba(255, 0, 128, var(--grad2-alpha, 0.1)) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at var(--grad1-x, 20%) var(--grad1-y, 80%), rgba(74, 144, 226, var(--grad1-alpha, 0.18)) 0%, transparent 55%),
+    radial-gradient(circle at var(--grad2-x, 80%) var(--grad2-y, 20%), rgba(183, 148, 246, var(--grad2-alpha, 0.18)) 0%, transparent 55%),
+    radial-gradient(circle at 40% 40%, rgba(240, 147, 251, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 60% 80%, rgba(248, 187, 217, 0.1) 0%, transparent 45%);
   pointer-events: none;
   z-index: 0;
 }
@@ -90,8 +91,9 @@ html {
 @media (max-width: 768px) {
   .app-container::before {
     background: 
-      radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(255, 0, 128, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 20% 80%, rgba(74, 144, 226, 0.15) 0%, transparent 55%),
+      radial-gradient(circle at 80% 20%, rgba(183, 148, 246, 0.15) 0%, transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(240, 147, 251, 0.1) 0%, transparent 45%);
   }
 }
 

@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Intro.css';
-import myPhoto from '../assets/myphoto.png';
+import myPhoto from '../assets/myphoto.jpeg';
 
 const ROLES = [
-  'Full Stack Developer',
-  'AI Enthusiast',
-  'UI/UX Designer',
-  'MERN Specialist',
-  'Lifelong Learner'
+  'Software Developer',
+  'Problem Solver', 
+  'Tech Enthusiast'
+];
+
+const STATS = [
+  { number: '15+', label: 'Projects Completed' },
+  { number: '3+', label: 'Years Experience' },
+  { number: '10+', label: 'Technologies' },
+  { number: '100%', label: 'Dedication' }
 ];
 
 const TYPING_SPEED = 45;
@@ -20,6 +25,11 @@ const Intro = () => {
   const [typedText, setTypedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
   const [showCursor, setShowCursor] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
   useEffect(() => {
     let timeout;
@@ -54,29 +64,107 @@ const Intro = () => {
     return () => clearInterval(cursorInterval);
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="intro-section">
+    <section id="intro" className="intro-section">
+      {/* Background Elements */}
+      <div className="intro-background">
+        <div className="floating-shapes">
+          <div className="shape shape-1"></div>
+          <div className="shape shape-2"></div>
+          <div className="shape shape-3"></div>
+          <div className="shape shape-4"></div>
+        </div>
+        <div className="grid-pattern"></div>
+      </div>
+
       <div className="intro-container">
-        <div className="intro-left">
-          <div className="intro-greeting animate-fade-in-up">Hi, I’m</div>
-          <h1 className="intro-title animate-fade-in-up" style={{animationDelay: '0.1s'}}>
-            <span className="intro-name gradient-text">Zain Ijaz</span>
-          </h1>
-          <h2 className="intro-special animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            <span className="gradient-text">{typedText}</span>
-            <span className="typewriter-cursor" style={{opacity: showCursor ? 1 : 0}}>|</span>
-          </h2>
-          <p className="intro-summary animate-fade-in-up" style={{animationDelay: '0.3s'}}>
-            Passionate about building modern web apps and smart AI solutions. Always learning, always building.
-          </p>
-          <div className="intro-buttons animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <a href="https://linkedin.com/in/zainijaz67" target="_blank" rel="noopener noreferrer" className="intro-btn intro-btn-primary">Contact on LinkedIn</a>
-            <a href="https://github.com/zainijaz67" target="_blank" rel="noopener noreferrer" className="intro-btn intro-btn-outline">GitHub</a>
+        {/* Main Content */}
+        <div className="intro-content">
+          <div className="intro-left">
+            {/* Main Text */}
+            <div className={`intro-text ${isVisible ? 'visible' : ''}`}>
+              <div className="intro-greeting">
+                <span>Hello, I'm</span>
+              </div>
+              
+              <h1 className="intro-name">
+                <span className="name-text">Zain Ijaz</span>
+                <div className="name-underline"></div>
+              </h1>
+              
+              <h2 className="intro-role">
+                <span className="role-prefix">I'm a </span>
+                <span className="role-dynamic">{typedText}</span>
+                <span className="cursor" style={{opacity: showCursor ? 1 : 0}}>|</span>
+              </h2>
+              
+              <p className="intro-description">
+                Passionate about crafting exceptional digital experiences through 
+                <span className="highlight"> full-stack development</span> and 
+                <span className="highlight"> AI innovation</span>. 
+                I transform ideas into scalable, user-centric solutions.
+              </p>
+            </div>
+
+            {/* Action Buttons */}
+            <div className={`intro-actions ${isVisible ? 'visible' : ''}`}>
+              <button 
+                onClick={() => scrollToSection('projects')} 
+                className="cta-button primary"
+              >
+                <span>View My Work</span>
+                <i className="fas fa-arrow-right"></i>
+              </button>
+              
+              <button 
+                onClick={() => scrollToSection('experience')} 
+                className="cta-button secondary"
+              >
+                <span>My Experience</span>
+                <i className="fas fa-briefcase"></i>
+              </button>
+            </div>
+
+            {/* Quick Links */}
+            <div className={`quick-links ${isVisible ? 'visible' : ''}`}>
+              <a href="https://www.linkedin.com/in/zain-ijaz-b9864a1a4/" target="_blank" rel="noopener noreferrer" className="quick-link">
+                <i className="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/zainejaz67" target="_blank" rel="noopener noreferrer" className="quick-link">
+                <i className="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="mailto:zain.ejaz67@gmail.com" className="quick-link">
+                <i className="fas fa-envelope"></i>
+                <span>Email</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Side - Photo */}
+          <div className="intro-right">
+            <div className={`photo-container ${isVisible ? 'visible' : ''}`}>
+              <div className="photo-frame">
+                <img src={myPhoto} alt="Zain Ijaz" className="profile-photo" />
+                <div className="photo-glow"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="intro-right animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-          <div className="intro-photo-border">
-            <img src={myPhoto} alt="Zain Ijaz" className="intro-photo" />
+
+        {/* Scroll Indicator */}
+        <div className={`scroll-indicator ${isVisible ? 'visible' : ''}`}>
+          <div className="scroll-text">Scroll to explore</div>
+          <div className="scroll-arrow">
+            <i className="fas fa-chevron-down"></i>
           </div>
         </div>
       </div>
@@ -84,4 +172,4 @@ const Intro = () => {
   );
 };
 
-export default Intro; 
+export default Intro;

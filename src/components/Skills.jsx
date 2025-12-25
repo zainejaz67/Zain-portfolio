@@ -4,31 +4,73 @@ import '../styles/Skills.css';
 const skillGroups = [
   {
     title: 'Programming Languages',
+    icon: 'fas fa-code',
     skills: [
-      { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-      { name: 'Numpy', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
-      { name: 'C++/C', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
-      { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-      { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
-      { name: 'SQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+      { name: 'Python' },
+      { name: 'JavaScript' },
+      { name: 'C++' },
+      { name: 'C' },
+      { name: 'C#' },
+      { name: 'Dart' },
+      { name: 'Kotlin' },
+      { name: 'SQL' }
     ]
   },
   {
-    title: 'Frameworks & Libraries',
+    title: 'Web & Mobile Development',
+    icon: 'fas fa-globe',
     skills: [
-      { name: 'React', logo: '/src/assets/react.svg' },
-      { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-      { name: 'MLflow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-      { name: 'DVC', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+      { name: 'React' },
+      { name: 'Node.js' },
+      { name: 'Express.js' },
+      { name: 'HTML' },
+      { name: 'CSS' },
+      { name: 'Flutter' },
+      { name: 'Flask' },
+      { name: 'FastAPI' }
     ]
   },
   {
-    title: 'DevOps & Tools',
+    title: 'AI & Machine Learning',
+    icon: 'fas fa-robot',
     skills: [
-      { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-      { name: 'Github', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
-      { name: 'Kubernetes', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
-      { name: 'Jenkins', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg' },
+      { name: 'TensorFlow' },
+      { name: 'Scikit-learn' },
+      { name: 'RAG' },
+      { name: 'Ollama' }
+    ]
+  },
+  {
+    title: 'Databases & Storage',
+    icon: 'fas fa-database',
+    skills: [
+      { name: 'SQL Server' },
+      { name: 'MongoDB' },
+      { name: 'Firebase' },
+      { name: 'MySQL' }
+    ]
+  },
+  {
+    title: 'Cloud & DevOps',
+    icon: 'fas fa-cloud',
+    skills: [
+      { name: 'AWS' },
+      { name: 'Docker' },
+      { name: 'Kubernetes' },
+      { name: 'Jenkins' },
+      { name: 'Prometheus' },
+      { name: 'Grafana' }
+    ]
+  },
+  {
+    title: 'Development Tools',
+    icon: 'fas fa-tools',
+    skills: [
+      { name: 'Git' },
+      { name: 'GitHub' },
+      { name: 'GitHub Actions' },
+      { name: 'Visual Studio' },
+      { name: 'Jenkins' }
     ]
   }
 ];
@@ -40,21 +82,25 @@ const Skills = () => (
         <span className="title-number">04.</span>
         Technical Skills
       </h2>
-      {skillGroups.map((group, idx) => (
-        <div key={group.title} className="skills-group">
-          <h3 className="skills-group-title">{group.title}</h3>
-          <div className="skills-grid">
-            {group.skills.map((skill) => (
-              <div key={skill.name} className="custom-experience-card skill-item-logo">
-                <div className="custom-experience-content" style={{alignItems: 'center', gap: '0.7rem'}}>
-                  <img src={skill.logo} alt={skill.name + ' logo'} className="skill-logo" width={48} height={48} />
-                  <span style={{fontWeight: 600}}>{skill.name}</span>
-                </div>
+      <div className="skills-categories-grid">
+        {skillGroups.map((group, idx) => (
+          <div key={group.title} className="skill-category-card">
+            <div className="category-header">
+              <div className="category-icon">
+                <i className={group.icon}></i>
               </div>
-            ))}
+              <h3 className="category-title">{group.title}</h3>
+            </div>
+            <div className="skill-tags">
+              {group.skills.map((skill) => (
+                <span key={skill.name} className="skill-tag">
+                  {skill.name}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 );

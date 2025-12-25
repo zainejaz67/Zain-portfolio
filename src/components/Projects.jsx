@@ -15,7 +15,8 @@ const projects = [
     technologies: ['MERN', 'AI', 'RAG', 'LMS', 'React', 'Node.js'],
     link: '',
     github: 'https://github.com/usman2335/Startovate_FYP',
-    category: 'Full Stack'
+    category: 'Full Stack',
+    icon: 'fas fa-rocket'
   },
   {
     id: 2,
@@ -28,8 +29,9 @@ const projects = [
     ],
     technologies: ['Python', 'DVC', 'MLflow', 'Flask', 'Prometheus', 'Grafana'],
     link: '',
-    github: '',
-    category: ''
+    github: 'https://github.com/zainejaz67/Real-Time-Environmental-Monitoring-AQI-Prediction',
+    category: 'MLOps',
+    icon: 'fas fa-globe-americas'
   },
   {
     id: 3,
@@ -42,7 +44,23 @@ const projects = [
     technologies: ['ASP .NET', 'C#', 'HTML', 'CSS', 'SQL Server'],
     link: '',
     github: '',
-    category: ''
+    category: 'Web Development',
+    icon: 'fas fa-chart-bar'
+  },
+  {
+    id: 4,
+    title: 'Parallel Log Analysis (PDC Project)',
+    description: 'Parallel log-analysis system using MPI for large-scale attack detection with distributed event correlation and performance benchmarking.',
+    bullets: [
+      'Developed a parallel log-analysis system using MPI for large-scale attack detection.',
+      'Implemented distributed event correlation, error checking, and cross-process communication.',
+      'Benchmarked performance and communication overhead against serial execution.'
+    ],
+    technologies: ['C', 'MPI', 'Parallel Computing', 'Log Analysis'],
+    link: '',
+    github: '',
+    category: 'Systems Programming',
+    icon: 'fas fa-bolt'
   }
 ];
 
@@ -84,10 +102,12 @@ const Projects = () => {
               key={project.id}
               title={project.title}
               description={project.description}
+              bullets={project.bullets}
               technologies={project.technologies}
               link={project.link}
               github={project.github}
               category={project.category}
+              icon={project.icon}
               animationDelay={index * 0.1}
             />
           ))}

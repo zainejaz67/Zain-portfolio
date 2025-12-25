@@ -4,42 +4,64 @@ import '../styles/ProjectCard.css';
 const ProjectCard = ({ 
   title, 
   description, 
+  bullets,
   technologies, 
   link, 
   github, 
   category,
+  icon,
   animationDelay = 0 
 }) => (
   <div 
-    className="custom-experience-card project-card-theme"
+    className="modern-project-card"
     style={{ animationDelay: `${animationDelay}s` }}
   >
-    <div className="custom-experience-content">
-      <div className="custom-role gradient-text" style={{fontSize: '1.3rem', marginBottom: '0.3rem'}}>{title}</div>
-      <div className="custom-divider" />
-      <div className="custom-description">{description}</div>
-      <div className="custom-divider" />
-      <div className="custom-technologies">
-        <span className="custom-tech-label">Technologies:</span>
-        <div className="custom-tech-tags">
-          {technologies.map((tech, idx) => (
-            <span className="custom-tech-tag" key={idx}>{tech}</span>
-          ))}
-        </div>
+    <div className="project-header">
+      <div className="project-icon">
+        <i className={icon || 'fas fa-laptop-code'}></i>
       </div>
-      {github && (
-        <div className="project-actions" style={{marginTop: '1.2rem'}}>
-          <a
-            href={github}
-            className="github-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View on GitHub
-          </a>
-        </div>
-      )}
+      <div className="project-title-section">
+        <h3 className="project-title">{title}</h3>
+        {category && <span className="project-category-badge">{category}</span>}
+      </div>
     </div>
+    
+    <p className="project-description">{description}</p>
+    
+    {bullets && bullets.length > 0 && (
+      <div className="project-features">
+        <h4 className="features-title">Key Features</h4>
+        <ul className="features-list">
+          {bullets.map((bullet, idx) => (
+            <li key={idx} className="feature-item">
+              • {bullet}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+    
+    <div className="project-technologies">
+      <h4 className="tech-title">Technologies Used</h4>
+      <div className="tech-tags">
+        {technologies.map((tech, idx) => (
+          <span key={idx} className="tech-tag">{tech}</span>
+        ))}
+      </div>
+    </div>
+    
+    {github && (
+      <div className="project-actions">
+        <a
+          href={github}
+          className="github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on GitHub →
+        </a>
+      </div>
+    )}
   </div>
 );
 

@@ -3,11 +3,29 @@ import '../styles/Education.css';
 
 const educationData = [
   {
-    degree: 'BS in Computer Science',
-    institution: 'FAST NUCES Islamabad, Pakistan',
-    year: '2021 – Present',
-    description: 'Object Oriented Programming, Data Structures and Algorithms, Database Systems, Software and Design Analysis, Linear Algebra, Probability and Statistics',
+    id: 1,
+    degree: 'Bachelor of Science in Computer Science',
+    institution: 'FAST-NUCES',
+    year: '2021 – 2025',
+    status: 'Graduated',
+    icon: 'fas fa-graduation-cap'
   },
+  {
+    id: 2,
+    degree: 'Cambridge A Levels',
+    institution: 'Cambridge International',
+    year: '2019 – 2021',
+    status: 'Graduated',
+    icon: 'fas fa-book'
+  },
+  {
+    id: 3,
+    degree: 'Cambridge O Levels',
+    institution: 'Cambridge International',
+    year: '2017 – 2019',
+    status: 'Graduated',
+    icon: 'fas fa-book-open'
+  }
 ];
 
 const Education = () => (
@@ -16,17 +34,21 @@ const Education = () => (
       <h2 className="section-title">
         <span className="title-number">01.</span> Education
       </h2>
-      <div className="education-list">
+      <div className="education-grid">
         {educationData.map((edu, idx) => (
-          <div className="custom-experience-card education-card-theme" key={idx}>
-            <div className="custom-experience-content">
-              <div className="custom-role gradient-text" style={{fontSize: '1.2rem', marginBottom: '0.3rem'}}>{edu.degree}</div>
-              <div className="custom-company-period-row">
-                <span className="custom-company">{edu.institution}</span>
-                <span className="custom-period">{edu.year}</span>
+          <div className="modern-education-card" key={edu.id}>
+            <div className="education-header">
+              <div className="education-icon">
+                <i className={edu.icon}></i>
               </div>
-              <div className="custom-divider" />
-              <div className="custom-description">{edu.description}</div>
+              <div className="education-title-section">
+                <h3 className="education-degree">{edu.degree}</h3>
+                <div className="education-institution">{edu.institution}</div>
+              </div>
+              <div className="education-status-section">
+                <span className="education-status">{edu.status}</span>
+                <div className="education-year">{edu.year}</div>
+              </div>
             </div>
           </div>
         ))}
